@@ -38,6 +38,7 @@ class Column {
 	 * @method int( ?int $length = null )
 	 * @method float( ?int $length = null )
 	 * @method double( ?int $length = null )
+	 * @method date( ?string $default = null )
 	 * @method datetime( ?string $default = null )
 	 * @method timestamp( ?string $default = null )
 	 */

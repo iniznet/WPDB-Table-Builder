@@ -338,6 +338,24 @@ $schema = new Schema('table', function(Schema $schema): void{
 
 ***
 
+## date( ?string $default = null ): Column
+
+> @param string|null $default  
+> @return Column  
+
+Defines a `DATE` with an optional default value
+
+```php
+$schema = new Schema('table', function(Schema $schema): void{
+    // Using helper
+    $schema->column('some_string')->date('2012-12-31');
+    // Verbose
+    $schema->column('some_string')->type('date')->default('2012-12-31');
+});
+```
+
+***
+
 ## datetime( ?string $default = null ): Column
 
 > @param string|null $default  

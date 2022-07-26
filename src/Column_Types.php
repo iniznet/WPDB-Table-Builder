@@ -113,6 +113,21 @@ trait Column_Types {
 	}
 
 	/**
+	 * Sets column as date with an optional default.
+	 *
+	 * @since 0.2.0
+	 * @param string|null $default
+	 * @return Column
+	 */
+	public function date( ?string $default = null ): Column {
+		$this->type( 'date' );
+		if ( null !== $default ) {
+			$this->default( $default );
+		}
+		return $this;
+	}
+
+	/**
 	 * Sets column as datetime with an optional default.
 	 *
 	 * @since 0.2.0
