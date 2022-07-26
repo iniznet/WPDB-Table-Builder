@@ -97,6 +97,7 @@ class DB_Delta_Translator {
 			case 'INTEGER':
 			case 'BIGINT':
 				// Date
+			case 'DATE':
 			case 'DATETIME':
 			case 'TIMESTAMP':
 			case 'TIME':
