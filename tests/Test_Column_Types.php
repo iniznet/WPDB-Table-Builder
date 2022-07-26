@@ -136,6 +136,21 @@ class Test_Column_Types extends WP_UnitTestCase {
 		$this->assertEquals( 12, $column_with_length->get_length() );
 	}
 
+	/** @testdox It should be possible to set common types such as DATE and its default in a simple and short fashion */
+	public function test_date_type(): void {
+		$column_no_default = new Column( 'with_no_length' );
+		$column_no_default->date();
+
+		$this->assertEquals( 'date', $column_no_default->get_type() );
+		$this->assertEquals( null, $column_no_default->get_default() );
+
+		$column_with_default = new Column( 'with_default' );
+		$column_with_default->date( 'NOW()' );
+
+		$this->assertEquals( 'date', $column_with_default->get_type() );
+		$this->assertEquals( 'NOW()', $column_with_default->get_default() );
+	}
+
 	/** @testdox It should be possible to set common types such as DATETIME and its default in a simple and short fashion */
 	public function test_datetime_type(): void {
 		$column_no_default = new Column( 'with_no_length' );
